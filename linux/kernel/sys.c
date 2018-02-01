@@ -2425,7 +2425,7 @@ COMPAT_SYSCALL_DEFINE1(sysinfo, struct compat_sysinfo __user *, info)
 }
 #endif /* CONFIG_COMPAT */
 
-asmlinkage int vcpu_info(void)
+asmlinkage int sys_vcpu_info(void)
 {
 	int ret = 0;
 
