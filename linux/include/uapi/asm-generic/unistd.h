@@ -665,9 +665,6 @@ __SC_COMP(__NR_recvmmsg, sys_recvmmsg, compat_sys_recvmmsg)
  */
 #define __NR_arch_specific_syscall 244
 
-/* e6998 */
-#define __NR_vcpu_info  245
-__SYSCALL(__NR_vcpu_info, sys_vcpu_info)
 
 #define __NR_wait4 260
 __SC_COMP(__NR_wait4, sys_wait4, compat_sys_wait4)
