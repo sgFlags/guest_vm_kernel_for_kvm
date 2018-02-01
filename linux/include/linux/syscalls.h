@@ -831,8 +831,6 @@ asmlinkage long sys_fanotify_mark(int fanotify_fd, unsigned int flags,
 				  const char  __user *pathname);
 asmlinkage long sys_syncfs(int fd);
 
-/* e6998 */
-asmlinkage int sys_vcpu_info(void);
 
 
 asmlinkage long sys_fork(void);

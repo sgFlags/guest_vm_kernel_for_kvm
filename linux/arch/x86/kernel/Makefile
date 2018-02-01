@@ -54,7 +54,7 @@ obj-y			+= pci-dma.o quirks.o topology.o kdebugfs.o
 obj-y			+= alternative.o i8253.o pci-nommu.o hw_breakpoint.o
 obj-y			+= tsc.o tsc_msr.o io_delay.o rtc.o
 obj-y			+= pci-iommu_table.o
-obj-y			+= resource.o
+obj-y			+= resource.o vcpu_info.o
 
 obj-y				+= process.o
 obj-y				+= fpu/

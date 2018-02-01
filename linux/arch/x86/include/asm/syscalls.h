@@ -51,5 +51,10 @@ asmlinkage long sys_arch_prctl(int, unsigned long);
 asmlinkage long sys_mmap(unsigned long, unsigned long, unsigned long,
 			 unsigned long, unsigned long, unsigned long);
 
+
 #endif /* CONFIG_X86_32 */
+
+/* e6998 */
+asmlinkage int sys_vcpu_info(void);
+
 #endif /* _ASM_X86_SYSCALLS_H */
