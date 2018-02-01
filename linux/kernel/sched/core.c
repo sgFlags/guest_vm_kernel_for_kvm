@@ -3362,7 +3362,6 @@ static void __sched notrace __schedule(bool preempt)
 
 	rq->clock_skip_update <<= 1; /* promote REQ to ACT */
 
-	printk("haha\n");
 	
 	switch_count = &prev->nivcsw;
 	if (!preempt && prev->state) {

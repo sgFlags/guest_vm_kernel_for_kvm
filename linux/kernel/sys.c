@@ -2424,3 +2424,11 @@ COMPAT_SYSCALL_DEFINE1(sysinfo, struct compat_sysinfo __user *, info)
 	return 0;
 }
 #endif /* CONFIG_COMPAT */
+
+asmlinkage int vcpu_info(void)
+{
+	int ret = 0;
+
+	printk("syscall succeed!!\n");
+	return ret;	
+}
