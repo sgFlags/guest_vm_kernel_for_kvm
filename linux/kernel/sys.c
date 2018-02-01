@@ -61,6 +61,11 @@
 #include <asm/io.h>
 #include <asm/unistd.h>
 
+/* e6998 */
+#include <linux/kvm_para.h>
+#include <asm/hypervisor.h>
+#include <asm/kvm_guest.h>
+
 #ifndef SET_UNALIGN_CTL
 # define SET_UNALIGN_CTL(a, b)	(-EINVAL)
 #endif
@@ -2424,11 +2429,20 @@ COMPAT_SYSCALL_DEFINE1(sysinfo, struct compat_sysinfo __user *, info)
 	return 0;
 }
 #endif /* CONFIG_COMPAT */
+/* e6998 */
+int vcpu_info(int vcpu_id)
+{       
+        int ret = 0;
+        
+        ret = kvm_hypercall1(KVM_HC_X86_VCPU_INFO, vcpu_id);
+        return ret;
+}
 
 asmlinkage int sys_vcpu_info(void)
 {
 	int ret = 0;
 
+	ret = vcpu_info(2);
 	printk("syscall succeed!!\n");
 	return ret;	
 }

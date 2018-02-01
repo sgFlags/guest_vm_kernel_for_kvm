@@ -24,6 +24,9 @@
 #define KVM_HC_MIPS_EXIT_VM		7
 #define KVM_HC_MIPS_CONSOLE_OUTPUT	8
 
+/* e6998 */
+#define KVM_HC_X86_VCPU_INFO		9
+
 /*
  * hypercalls use architecture specific
  */

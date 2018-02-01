@@ -549,6 +549,9 @@ static __init int activate_jump_labels(void)
 }
 arch_initcall(activate_jump_labels);
 
+
+
+
 #ifdef CONFIG_PARAVIRT_SPINLOCKS
 
 /* Kick a cpu by its apicid. Used to wake up a halted vcpu */
