@@ -1,6 +1,7 @@
 #include <linux/kvm_para.h>
 #include <asm/hypervisor.h>
 #include <asm/kvm_guest.h>
+#include <asm/syscalls.h>
 
 /*int vcpu_info(int vcpu_id)
 {       
