@@ -17,6 +17,8 @@ asmlinkage int sys_vcpu_info(void)
 
 	printk("syscall succeed222!!\n");
 	printk("where am I?\n");
-	ret = vcpu_info(2);
+	
+	ret = vcpu_info(0);
+	ret = vcpu_info(1);
 	return ret;	
 }
