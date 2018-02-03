@@ -2,6 +2,7 @@
 #include <asm/hypervisor.h>
 #include <asm/kvm_guest.h>
 #include <asm/syscalls.h>
+#include <linux/cpu.h>
 
 int vcpu_info(int vcpu_id)
 {       
@@ -14,11 +15,13 @@ int vcpu_info(int vcpu_id)
 asmlinkage int sys_vcpu_info(void)
 {
 	int ret = 0;
+	int i;
 
 	printk("syscall succeed222!!\n");
-	printk("where am I?\n");
-	
-	ret = vcpu_info(0);
-	ret = vcpu_info(1);
-	return ret;	
+	for (i = 0; i < num_online_cpus(); i++) {
+		ret = vcpu_info(i);
+		if (ret)
+			return ret;
+	}
+	return ret;
 }
